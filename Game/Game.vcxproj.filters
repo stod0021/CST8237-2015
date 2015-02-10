@@ -22,4 +22,9 @@
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\2000px-Pacman.svg.png">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

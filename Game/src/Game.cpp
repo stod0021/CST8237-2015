@@ -28,7 +28,8 @@ Game::~Game()
 void Game::InitializeImpl()
 {
   SDL_SetWindowTitle(_window, "Game");
-
+  SDL_Surface* loadedSurface = IMG_Load("~/Resources/2000px-Pacman.svg.png");
+  SDL_Texture * IMG_LoadTexture( loadedSurface);
   for (auto itr = _objects.begin(); itr != _objects.end(); itr++)
   {
     (*itr)->Initialize(_renderer);

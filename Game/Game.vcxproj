@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\Engine\src;$(SDL)/include;$(SDL_image)/include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\Debug;$(SDL)/lib/x86;$(SDL_image)/lib/x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\Engine\src</IncludePath>
+    <LibraryPath>$(SDL)/lib/x86;$(SDL)/include;$(SDL_image)/lib/x86;$(SDL_image)/include;..\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -54,11 +54,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Dev_Dave\Documents\Visual Studio 2013\Projects\GameProgramming\CST8237-2015\External\SDL2_image-2.0.0\include;C:\Users\Dev_Dave\Documents\Visual Studio 2013\Projects\GameProgramming\CST8237-2015\External\SDL2-2.0.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Dev_Dave\Documents\Visual Studio 2013\Projects\GameProgramming\CST8237-2015\External\SDL2_image-2.0.0\lib\x86;C:\Users\Dev_Dave\Documents\Visual Studio 2013\Projects\GameProgramming\CST8237-2015\External\SDL2-2.0.3\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -84,6 +86,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\2000px-Pacman.svg.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
