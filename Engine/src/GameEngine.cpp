@@ -1,5 +1,6 @@
 #include "GameEngine.h"
 #include <SDL.h>
+#include <SDL_image.h>
 #include "MathUtils.h"
 #include <SDL_image.h>
 GameEngine::GameEngine()
@@ -34,6 +35,7 @@ void GameEngine::Initialize()
 
 void GameEngine::Shutdown()
 {
+  /* Stop the engine timer as we're shutting down. */
   _engineTimer.Stop();
 
   SDL_DestroyRenderer(_renderer);
